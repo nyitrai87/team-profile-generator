@@ -145,7 +145,7 @@ const internQs = [
     },
     {
         type: 'input',
-        name: 'engSchool',
+        name: 'intSchool',
         message: "In which school is the Intern studying?",
         validate(value) {
             if (value) {
