@@ -1,7 +1,7 @@
 const questions = [
     {
         type: 'input',
-        name: 'mgrName',
+        name: 'name',
         message: "What is your Manager's name?",
         validate(value) {
             if (value) {
@@ -13,7 +13,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'mgrId',
+        name: 'id',
         message: "What is your Manager's employee ID?",
         validate(value) {
             if (value) {
@@ -25,7 +25,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'mgrEmail',
+        name: 'email',
         message: "What is your Manager's email address?",
         validate(value) {
             if (value) {
@@ -37,7 +37,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'mgrOfficeNumber',
+        name: 'officeNumber',
         message: "What is your Manager's office number?",
         validate(value) {
             if (value) {
@@ -47,18 +47,19 @@ const questions = [
             }
         }
     },
-    {
-        type: 'list',
-        name: 'options',
-        message: 'What would you like to do?',
-        choices: ['Add an engineer', 'Add an intern', 'Finish building the team'],
-    },
 ];
+
+const options = [{
+    type: 'list',
+    name: 'options',
+    message: 'What would you like to do?',
+    choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
+}];
 
 const engineerQs = [
     {
         type: 'input',
-        name: 'engName',
+        name: 'name',
         message: "What is the Engineer's name?",
         validate(value) {
             if (value) {
@@ -70,7 +71,7 @@ const engineerQs = [
     },
     {
         type: 'input',
-        name: 'engId',
+        name: 'id',
         message: "What is the Engineer's employee ID?",
         validate(value) {
             if (value) {
@@ -82,7 +83,7 @@ const engineerQs = [
     },
     {
         type: 'input',
-        name: 'engEmail',
+        name: 'email',
         message: "What is the Engineer's email address?",
         validate(value) {
             if (value) {
@@ -94,7 +95,7 @@ const engineerQs = [
     },
     {
         type: 'input',
-        name: 'engGithub',
+        name: 'github',
         message: "What is the Engineer's GitHub username?",
         validate(value) {
             if (value) {
@@ -109,7 +110,7 @@ const engineerQs = [
 const internQs = [
     {
         type: 'input',
-        name: 'intName',
+        name: 'name',
         message: "What is the Intern's name?",
         validate(value) {
             if (value) {
@@ -121,7 +122,7 @@ const internQs = [
     },
     {
         type: 'input',
-        name: 'intId',
+        name: 'id',
         message: "What is the Intern's employee ID?",
         validate(value) {
             if (value) {
@@ -133,7 +134,7 @@ const internQs = [
     },
     {
         type: 'input',
-        name: 'intEmail',
+        name: 'email',
         message: "What is the Intern's email address?",
         validate(value) {
             if (value) {
@@ -145,7 +146,7 @@ const internQs = [
     },
     {
         type: 'input',
-        name: 'intSchool',
+        name: 'school',
         message: "In which school is the Intern studying?",
         validate(value) {
             if (value) {
@@ -157,4 +158,4 @@ const internQs = [
     },
 ];
 
-module.exports = { questions, engineerQs, internQs };
+module.exports = { questions, options, engineerQs, internQs };
