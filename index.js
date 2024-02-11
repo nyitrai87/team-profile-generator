@@ -2,6 +2,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
+const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
 
@@ -32,7 +33,7 @@ function menu() {
                     .then(engineer => {
                         const eng = new Engineer(engineer.name, engineer.id, engineer.email, engineer.github);
                         if (employees.find(employee => employee.id === engineer.id)) {
-                            console.log('An employee with this ID has already been added!');
+                            console.log(chalk.red('An employee with this ID has already been added!'));
                         } else {
                             employees.push(eng);
                         }
@@ -43,7 +44,7 @@ function menu() {
                     .then(intern => {
                         const int = new Intern(intern.name, intern.id, intern.email, intern.school);
                         if (employees.find(employee => employee.id === intern.id)) {
-                            console.log('An employee with this ID has already been added!');
+                            console.log(chalk.red('An employee with this ID has already been added!'));
                         } else {
                             employees.push(int);
                         }
@@ -65,7 +66,7 @@ function writeToFile(fileName, data) {
             console.log(err);
             return;
         } else {
-            console.log('Your team profile has been generated. Please find it in the "output" folder.');
+            console.log(chalk.green('Your team profile has been generated. Please find it in the "output" folder.'));
         }
     })
 }
