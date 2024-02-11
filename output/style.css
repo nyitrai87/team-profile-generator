@@ -8,10 +8,21 @@
     border-radius: 0;
 }
 
+.container {
+    display: block;
+    margin: 0 auto;
+}
+
+.team-area {
+    display: flex;
+    justify-content: center;
+}
+
 .employee-card {
     border: 0;
     box-shadow: 5px 5px 5px #848484;
     width: 296px;
+    margin-bottom: 30px;
 }
 
 .card-header {
